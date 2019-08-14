@@ -1,0 +1,8 @@
+<%# Create a Doctor#index page that displays each doctor's name, a link to their show page, and a count of their patients. %>
+
+<h2>Doctors</h2>
+
+<% @doctors.each do |doc|%>
+    <h3><%= link_to doc.name, doctor_path(doc) %></h3><br>
+    <p><%= pluralize(doc.patient_count, 'patient') %></p>
+<% end %>
